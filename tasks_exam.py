@@ -45,6 +45,12 @@ def thrid(periods: list[tuple]):
         if i[0] > i[1]:
             return False
 
+        if i[0] >= 24:
+            return False
+
+        if i[1] > 24:
+            return False
+
     sorted_periods = sorted(periods, key=lambda x: x[0])
     count = len(sorted_periods)
 
@@ -64,7 +70,7 @@ if __name__ == '__main__':
     # list_ = ["ATTA", "ACTA", "AGCA", "ACAA"]
     # print(second(list_))
 
-    periods = [(1, 3), (6, 8), (9, 12), (17, 20), (14, 16), (4, 5)]
+    periods = [(1, 3), (8, 9), (9, 12), (17, 20), (14, 16), (4, 5)]
 
     if thrid(periods):
         print("Хватит")
